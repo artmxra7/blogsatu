@@ -24,8 +24,8 @@
                         <div class="post-meta padding-10 clearfix">
                             <div class="pull-left">
                                 <ul class="post-meta-group">
-                                    <li><i class="fa fa-user"></i><a href="#"> Admin</a></li>
-                                    <li><i class="fa fa-clock-o"></i><time> February 12, 2016</time></li>
+                                    <li><i class="fa fa-user"></i><a href="#"> {{$posts->author['name']}}</a></li>
+                                    <li><i class="fa fa-clock-o"></i><time> {{$posts->date}}</time></li>
                                     <li><i class="fa fa-tags"></i><a href="#"> Blog</a></li>
                                     <li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li>
                                 </ul>
@@ -39,10 +39,11 @@
 
                 @endforeach
                 <nav>
-                  <ul class="pager">
+                    {{$post->links()}}
+                  {{--  <ul class="pager">
                     <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                     <li class="next"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
-                  </ul>
+                  </ul>  --}}
                 </nav>
             </div>
            @include('layouts.sidebar')
